@@ -1,9 +1,9 @@
 package com.vogella.android.androidpkmn.model;
 
 public class Pokemon {
-    private String name;
-    private String item;
-    private String abiltiy;
+    private String species;
+    private String[] item;
+    private String[] ability;
     private String nature;
 
     private Evs evs;
@@ -12,20 +12,27 @@ public class Pokemon {
 
 
 
-    public String getName() {
-        return name;
+    public String getSpecies() {
+        return species;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String species) {
+        this.species = species;
     }
 
-    public String getItem() { return item; }
-    public void setItem(String item) { this.item = item; }
+    public String[] getItem() { return item; }
+    public void setItem(String[] item) { this.item = item; }
 
-    public String getAbiltiy() { return abiltiy; }
-    public void setAbiltiy(String abiltiy) { this.abiltiy = abiltiy; }
+    public String[] getAbility() { return ability; }
+    public void setAbility(String[] ability) { this.ability = ability; }
 
     public String getNature() { return nature; }
     public void setNature(String nature) { this.nature = nature; }
+    
+    public Pokemon(String species, String[] item, String[] ability, String nature){
+        this.species = species;
+        this.item = item;
+        this.ability = ability;
+        this.nature = nature;
+    }
 
 }

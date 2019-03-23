@@ -1,7 +1,8 @@
 package com.vogella.android.androidpkmn.data;
 
+import com.vogella.android.androidpkmn.model.Pokemon;
 
-import com.vogella.android.androidpkmn.model.PkmnResponse;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -9,6 +10,6 @@ import retrofit2.http.GET;
 
 
 public interface PkmnAPI {
-    @GET("bss-factory-sets.json")
-    Call<PkmnResponse> getListPokemon();
+    @GET("pkmn.json")
+    Call<List<Pokemon>> getListPokemon();
 }
