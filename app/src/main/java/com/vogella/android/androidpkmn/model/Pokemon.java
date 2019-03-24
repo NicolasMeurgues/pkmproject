@@ -100,6 +100,7 @@ public class Pokemon {
         this.moves = moves;
     }
 
+    //TODO faire class evs et ivs ou se débrouiller pour recup les infos d'un objet json dans cette classe
 
     public Pokemon(String species, String[] item, String[] ability, String nature, int hp, int atk, int def, int spa, int spdef, int spe, int ihp, int iatk, int idef, int ispa, int ispdef, int ispe){
         this.species = species;
