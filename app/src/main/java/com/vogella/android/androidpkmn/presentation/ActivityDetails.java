@@ -23,7 +23,6 @@ public class ActivityDetails extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitydetails);
 
-        //TODO lien xml et variables à faire
         species = (TextView) findViewById(R.id.speciestxt);
         ability = (TextView) findViewById(R.id.abilitytxt);
         nature = (TextView) findViewById(R.id.naturetxt);
@@ -34,7 +33,6 @@ public class ActivityDetails extends Activity {
         Gson gson = new Gson();
         Pokemon pkmn = gson.fromJson(jsonPkmn, Pokemon.class);
 
-        //TODO reprendre les getters pour donner les infos
         species.setText(pkmn.getSpecies());
         ability.setText(pkmn.getAbility());
         nature.setText(pkmn.getNature());

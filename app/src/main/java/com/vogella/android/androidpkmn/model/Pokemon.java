@@ -3,6 +3,8 @@ package com.vogella.android.androidpkmn.model;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+import java.util.List;
+
 public class Pokemon {
     private String species;
     private String[] item;
@@ -39,10 +41,9 @@ public class Pokemon {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String getMoves() {
-        String move = null;
+        String move = "";
         for (String[] movesi : moves) {
-            String movei = movesi.toString();
-            move = String.join(movei);
+            move += String.join(",", movesi)+"\n"; //concat -> stringBuilder
         }
         return move;
     }
