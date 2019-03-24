@@ -50,9 +50,8 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Pokemon pkmn = localDataset.get(position);
-        String abilities = String.join(",", pkmn.getAbility());
         holder.txtHeader.setText(pkmn.getSpecies());
-        holder.txtFooter.setText(abilities);
+        holder.txtFooter.setText(pkmn.getAbility());
 
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,28 +1,34 @@
 package com.vogella.android.androidpkmn.presentation;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.vogella.android.androidpkmn.R;
 import com.vogella.android.androidpkmn.model.Pokemon;
 
-class ActivityDetails extends Activity {
+public class ActivityDetails extends Activity {
     public TextView species;
     public TextView nature;
     public TextView ability;
     public TextView item;
     public TextView moves;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitydetails);
 
         //TODO lien xml et variables à faire
-         species = (TextView) findViewById(R.id.speciestxt);
-         ability = (TextView) findViewById(R.id.abilitytxt);
+        species = (TextView) findViewById(R.id.speciestxt);
+        ability = (TextView) findViewById(R.id.abilitytxt);
+        nature = (TextView) findViewById(R.id.naturetxt);
+        item = (TextView) findViewById(R.id.itemtxt);
+        moves = (TextView) findViewById(R.id.movestxt);
 
         String jsonPkmn = getIntent().getStringExtra("pkmnID");
         Gson gson = new Gson();
@@ -30,5 +36,9 @@ class ActivityDetails extends Activity {
 
         //TODO reprendre les getters pour donner les infos
         species.setText(pkmn.getSpecies());
+        ability.setText(pkmn.getAbility());
+        nature.setText(pkmn.getNature());
+        item.setText(pkmn.getItem());
+        moves.setText(pkmn.getMoves());
     }
 }
