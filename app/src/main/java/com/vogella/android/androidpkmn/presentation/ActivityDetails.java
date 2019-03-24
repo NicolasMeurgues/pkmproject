@@ -30,7 +30,7 @@ public class ActivityDetails extends Activity {
         item = (TextView) findViewById(R.id.itemtxt);
         moves = (TextView) findViewById(R.id.movestxt);
 
-        String jsonPkmn = getIntent().getStringExtra("pkmnID");
+        String jsonPkmn = getIntent().getStringExtra("pkmnId");
         Gson gson = new Gson();
         Pokemon pkmn = gson.fromJson(jsonPkmn, Pokemon.class);
 
