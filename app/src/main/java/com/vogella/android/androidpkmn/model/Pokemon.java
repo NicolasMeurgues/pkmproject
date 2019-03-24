@@ -8,7 +8,7 @@ public class Pokemon {
 
     private Evs evs;
     private Ivs ivs;
-    private Moves moves;
+    private String[][] moves;
 
 
 
@@ -27,12 +27,18 @@ public class Pokemon {
 
     public String getNature() { return nature; }
     public void setNature(String nature) { this.nature = nature; }
-    
+
+    public String[][] getMoves() {
+        return moves;
+    }
+    public void setMoves(String[][] moves) {
+        this.moves = moves;
+    }
+
     public Pokemon(String species, String[] item, String[] ability, String nature){
         this.species = species;
         this.item = item;
         this.ability = ability;
         this.nature = nature;
     }
-
 }

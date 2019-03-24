@@ -1,5 +1,7 @@
 package com.vogella.android.androidpkmn.presentation;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +33,6 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
 
-
     public MyAdapter(List<Pokemon> input, OnItemClickListener listener) {
         localDataset = input;
         this.listener = listener;
@@ -45,11 +46,13 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
        return viewHolder;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Pokemon pkmn = localDataset.get(position);
+        String abilities = String.join(",", pkmn.getAbility());
         holder.txtHeader.setText(pkmn.getSpecies());
-        holder.txtFooter.setText("Je suis le prof Chen");
+        holder.txtFooter.setText(abilities);
 
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
