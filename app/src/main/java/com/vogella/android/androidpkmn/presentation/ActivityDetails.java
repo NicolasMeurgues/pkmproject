@@ -22,12 +22,6 @@ public class ActivityDetails extends Activity {
     public TextView evsSpa;
     public TextView evsSpd;
     public TextView evsSpe;
-    public TextView ivsHp;
-    public TextView ivsAtk;
-    public TextView ivsDef;
-    public TextView ivsSpa;
-    public TextView ivsSpdef;
-    public TextView ivsSpe;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -46,12 +40,6 @@ public class ActivityDetails extends Activity {
         evsSpa = (TextView) findViewById(R.id.evsspa);
         evsSpd = (TextView) findViewById(R.id.evsspdef);
         evsSpe = (TextView) findViewById(R.id.evsspe);
-        ivsHp = (TextView) findViewById(R.id.ivshp);
-        ivsAtk = (TextView) findViewById(R.id.ivsatk);
-        ivsDef = (TextView) findViewById(R.id.ivsdef);
-        ivsSpa = (TextView) findViewById(R.id.ivsspa);
-        ivsSpdef = (TextView) findViewById(R.id.ivsspdef);
-        ivsSpe = (TextView) findViewById(R.id.ivsspe);
 
         String jsonPkmn = getIntent().getStringExtra("pkmnId");
         Gson gson = new Gson();
@@ -62,17 +50,11 @@ public class ActivityDetails extends Activity {
         nature.setText(pkmn.getNature());
         item.setText(pkmn.getItem());
         moves.setText(pkmn.getMoves());
-        evsHp.setText(pkmn.getHp());
-        evsAtk.setText(pkmn.getAtk());
-        evsDef.setText(pkmn.getDef());
-        evsSpa.setText(pkmn.getSpa());
-        evsSpd.setText(pkmn.getSpdef());
-        evsSpe.setText(pkmn.getSpe());
-        ivsHp.setText(pkmn.getiHp());
-        ivsAtk.setText(pkmn.getiAtk());
-        ivsDef.setText(pkmn.getiDef());
-        ivsSpa.setText(pkmn.getiSpa());
-        ivsSpdef.setText(pkmn.getiSpdef());
-        ivsSpe.setText(pkmn.getSpe());
+        evsHp.setText(String.valueOf(pkmn.getEvs().getHp()));
+        evsAtk.setText(String.valueOf(pkmn.getEvs().getAtk()));
+        evsDef.setText(String.valueOf(pkmn.getEvs().getDef()));
+        evsSpa.setText(String.valueOf(pkmn.getEvs().getSpa()));
+        evsSpd.setText(String.valueOf(pkmn.getEvs().getSpd()));
+        evsSpe.setText(String.valueOf(pkmn.getEvs().getSpe()));
     }
 }
