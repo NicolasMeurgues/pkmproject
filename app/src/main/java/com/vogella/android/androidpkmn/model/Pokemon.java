@@ -61,8 +61,6 @@ public class Pokemon {
         return ivs;
     }
 
-    //TODO faire class evs et ivs ou se débrouiller pour recup les infos d'un objet json dans cette classe
-
     public Pokemon(String species, String[] item, String[] ability, String nature, Evs evs, Ivs ivs){
         this.species = species;
         this.item = item;
